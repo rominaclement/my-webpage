@@ -2,7 +2,8 @@
 <head>
   <style>
 body {
-  background-color: lightpink;
+  background-color: lightpink;  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -17,26 +18,48 @@ p {
   table, th, td {
     border: 1px solid black;
   }
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
     
 </style>
   <title>Romina's Page</title>
 
 </head>
 <body>
-<h1> Welcome!</h1>
-
-<h2>Responsive Navigation Bar with Icons</h2>
-<p>Try to resize the browser window to see the responsive effect.</p>
   
+<h1> Welcome!</h1>
 <div class="navbar">
   <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
   <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
   <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
   <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
 </div>
-
-</body>
-</html> 
 <h2>About me</h2>
 <h2>I am half Peruvian</h2>
 <h2>I am a fluent spanish speaker</h2>
