@@ -1,274 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+body {
+  background-color: lightpink;  
+  font-family: Times New Roman font
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: Times New Roman font;
+  font-size: 20px;
+}
+  table, th, td {
+    border: 1px solid black;
+  }
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+    
+</style>
   <title>Romina's Page</title>
 
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: linear-gradient(145deg, #ffe5f4, #ffd1e8, #fff5fb);
-      font-family: "Times New Roman", serif;
-      padding-bottom: 80px;
-      animation: fadeBg 10s ease-in-out infinite alternate;
-    }
-
-    @keyframes fadeBg {
-      from { background: #ffe5f4; }
-      to { background: #ffd1e8; }
-    }
-
-    h1, h2 {
-      font-family: "Times New Roman", serif;
-      text-align: center;
-      color: #5b3047;
-      margin-top: 20px;
-    }
-
-    p, ul, ol, table {
-      font-size: 20px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 90%;
-      max-width: 900px;
-      color: #5b3047;
-    }
-
-    /* Aesthetic handwritten font */
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
-
-    .fancy-title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 48px;
-      color: #cc6b9e;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-top: 30px;
-    }
-
-    /* Navbar */
-    .navbar {
-      width: 100%;
-      background-color: #555;
-      overflow: auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .navbar a {
-      float: left;
-      padding: 12px;
-      color: white;
-      text-decoration: none;
-      font-size: 17px;
-      transition: 0.3s;
-    }
-
-    .navbar a:hover { background-color: #000; transform: scale(1.05); }
-    .active { background-color: #ff8fb8; }
-
-    @media screen and (max-width: 500px) {
-      .navbar a { float: none; display: block; text-align: center; }
-    }
-
-    /* Aesthetic MTB Feature Card */
-    .feature-card {
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
-      max-width: 1100px;
-      width: 90%;
-      margin: 40px auto;
-      overflow: hidden;
-      display: flex;
-      flex-direction: row;
-      animation: fadeIn 1.4s ease;
-    }
-
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to {opacity:1; transform: none;} }
-
-    .feature-text, .feature-img {
-      flex: 1;
-      padding: 20px 30px;
-    }
-
-    .feature-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .tag {
-      background: #ffe5f4;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      color: #cc6b9e;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .feature-text p {
-      margin-top: 15px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 900px) {
-      .feature-card { flex-direction: column; }
-      .feature-img { padding: 0; }
-    }
-
-    /* Table styling */
-    table {
-      border-collapse: collapse;
-      margin-top: 20px;
-      width: 90%;
-      max-width: 900px;
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      animation: fadeIn 1.6s ease;
-    }
-
-    th, td {
-      border: 1px solid #e8c6d8;
-      padding: 10px;
-      text-align: left;
-    }
-
-    th { background-color: #ffcee5; color: #5b3047; }
-    td { background-color: #fff7fb; color: #5b3047; }
-
-    /* Sparkle effect */
-    .sparkle {
-      position: relative;
-    }
-
-    .sparkle::after {
-      content: '✨';
-      position: absolute;
-      right: -25px;
-      top: -10px;
-      font-size: 28px;
-      animation: twinkle 1.5s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: .2; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-
-    /* Photo gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      grid-gap: 20px;
-      width: 90%;
-      max-width: 1000px;
-      margin: 40px auto;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      padding: 20px;
-      font-size: 18px;
-      color: #5b3047;
-      background: #ffe5f4;
-      border-top: 2px solid #ffa7d3;
-    }
-
-  </style>
 </head>
-
 <body>
-
-<h1 class="fancy-title sparkle">Welcome to Romina's Page</h1>
-
+  
+<h1> Welcome!</h1>
 <div class="navbar">
-  <a class="active" href="#">Home</a>
-  <a href="https://www.google.com/">Search</a>
-  <a href="mailto:rac22@stmarys-ca.edu">Contact</a>
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwio3dmkhruQAxWoHjQIHVyfM6cQPAgI"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="mailto:rac22@stmarys-ca.edu"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
 </div>
-
-<!-- FEATURE CARD -->
-<div class="feature-card">
-  <div class="feature-text">
-    <span class="tag">Mountain Biking ✨</span>
-    <h2>Bay View Trails — My Favorite MTB Spot</h2>
-    <p>
-      This trail is super special to me. The redwoods, the quiet switchbacks,
-      the ferns, and the challenge made me fall in love with mountain biking.
-      It’s where I practiced, struggled, rode with family, and improved over time.
-    </p>
-  </div>
-
-  <div class="feature-img">
-    <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg">
-  </div>
-</div>
-
-<h2>About Me</h2>
+<h2>About me</h2>
 <h2>I am half Peruvian</h2>
-<h2>I am a fluent Spanish speaker</h2>
+<h2>I am a fluent spanish speaker</h2>
 <h2>I am also currently a first year at Saint Mary's College of California</h2>
+  <img src="IMG_9539.JPG" width="300">
 
-<img src="IMG_9539.JPG" width="300" class="center-img" style="display:block;margin:20px auto;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.15);">
-
-<h2>Photo Gallery ✨</h2>
-<div class="gallery">
-  <img src="https://images.pexels.com/photos/19670/pexels-photo.jpg">
-  <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg">
-  <img src="https://images.pexels.com/photos/34950/pexels-photo.jpg">
-  <img src="https://images.pexels.com/photos/210415/pexels-photo-210415.jpeg">
-</div>
-
-<h2>Hobbies</h2>
-<p>Some of my hobbies include:</p>
+<h2> hobbies</h2>
+some of my hoddies include: 
 <ul>
-  <li>Pilates</li>
-  <li>Cooking</li>
-  <li>Hiking</li>
-  <li>Shopping</li>
-  <li>Coloring</li>
+   <li>pilates</li>
+   <li>cooking</li>
+   <li>hiking</li>
+   <li>shopping</li>
+  <li>coloring</li>
 </ul>
-
-<h2>Classes I'm Taking</h2>
-<p>I am currently taking:</p>
-
-<ol>
-  <li>ECON-101-01: Microeconomic Principles</li>
-  <li>WRIT-101-03: Writing As Inquiry</li>
-  <li>COMM-102-03: Intro to Media & Cultural Stud</li>
-  <li>CS-102-01: Digital Literacy</li>
-  <li>SMC-100-12: First Year Advising Cohort</li>
-  <li>Jan 109-01: Introduction to Magic</li>
-</ol>
-
+  <h2> Classes I'm taking</h2>
+  I am currently taking:
+  <ol>
+    <li>ECON-101-01: Microeconomic Principles</li>
+    <li>WRIT-101-03: Writing As Inquiry</li>
+    <li>COMM-102-03: Intro to Media & Cultural Stud</li>
+    <li>CS-102-01: Digital Literacy</li>
+    <li>SMC-100-12: First Year Advising Cohort</li>
+    <li>Jan 109-01: Introduction to Magic</li>
+  </ol>
 <table>
   <tr>
-    <th>Course num</th>
-    <th>Course name</th>
-    <th>Classroom</th>
-    <th>Meeting days</th>
-    <th>Meeting time</th>
+  <th>Course num</th>
+  <th>Course name</th>
+  <th>Classrooms</th>
+  <th>Meeting days</th>
+  <th>Meeting time</th>
   </tr>
   <tr>
     <td>ECON-101-01</td>
-    <td>Microeconomic Principles</td>
+      <td> Microeconomic Principles</td>
     <td>Dante 220</td>
-    <td>Mon, Wed, Fri</td>
-    <td>9:
+    <td>Monday, Wedensday, Friday</td>
+    <td>9:15am - 10:20am</td>
+  </tr>
+  <tr>
+    <td>WRIT-101-03</td>
+      <td> Writing As Inquiry</td>
+    <td>Dante 213</td>
+    <td>Monday, Wedensday, Friday</td>
+    <td>10:40am - 11:30am </td>
+  </tr>
+   <tr>
+    <td>COMM-102-03</td>
+      <td>Intro to Media & Cultural Stud</td>
+    <td>Sichel 106</td>
+    <td>Tuesday, Thursday</td>
+    <td>10:50am - 11:30am </td>
+  </tr>
+  <tr>
+    <td>CS-102-01</td>
+      <td>Digital Literacy</td>
+    <td>Mary Candida Garaventa 330</td>
+    <td>Tuesday, Thursday</td>
+    <td>11:40am -12:55pm </td>
+  </tr>
+   <tr>
+    <td>SMC-100-12</td>
+      <td>First Year Advising Cohort</td>
+    <td>Sichel 104</td>
+    <td>Wedensday</td>
+    <td>1:20pm - 2:35pm</td>
+  </tr>
+  <tr>
+    <td>Jan 109-01</td>
+      <td>Introduction to Magic</td>
+    <td>TBD</td>
+    <td>Monday, Tuesday, Wedensday, Thursday, Friday</td>
+    <td>9:15am - 11:55am</td>
+  </tr>
+ </table>
+
+  <h1>ASMR eating video</h1>
+  <iframe width="976" height="549" src="https://www.youtube.com/embed/MF-7FhkBvU0" title="SALMON + TUNA SASHIMI SLAB (ASMR EATING SOUNDS) LIGHT WHISPERS | SAS-ASMR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h1>My Campus:</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.829042959338!2d-122.11151232427567!3d37.840887908349174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f884cd1042763%3A0xf4af4d5ec8f1ac3d!2sSaint%20Mary&#39;s%20College%20of%20California!5e0!3m2!1sen!2sus!4v1759863831217!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
